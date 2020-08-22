@@ -1,45 +1,44 @@
 const express = require('express');
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-
-const books = [
-  {
-    title: 'Love You Forever',
-    read: false,
-    author: 'Robert Munsch'
-  },
-  {
-    title: 'The Giving Tree',
-    read: false,
-    author: 'Shel Silverstein'
-  },
-  {
-    title: 'Where the Red Fern Grows',
-    read: true,
-    author: 'Wilson Rawls'
-  },
-  {
-    title: 'The Fault in Our Stars',
-    read: true,
-    author: 'John Green'
-  },
-  {
-    title: 'Out of My Mind',
-    read: false,
-    author: 'Sally Engelfried'
-  },
-  {
-    title: 'Wonder',
-    read: false,
-    author: 'Barbara Schultz'
-  }
-];
+const { Post, User, Comment } = require('../models');
 
 router.get('/', (req, res) => {
-    console.log(req.session);
-
-    const data = { books: books };
-    res.render('homepage', data);
-  });
+  console.log(req.session);
+  
+  Post.findAll({
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'post_content'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
+      res.render('homepage', {
+          posts,
+          loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;
