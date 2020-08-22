@@ -1,0 +1,15 @@
+<h1>Library Books</h1>
+
+<h2>Books you've already read</h2>
+<!-- Loop through the books and if 'read' is true, list them below -->
+{{#each books}}
+<ul>
+{{#if read}}
+  <li>
+    <p>Title: {{title}}</p>
+    <p>Author: {{author}}</p>
+  </li>
+{{/if}}
+</ul>
+{{/each}}
+
