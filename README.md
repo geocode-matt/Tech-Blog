@@ -3,7 +3,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/geocode-matt/tech-blog)
 ![GitHub](https://img.shields.io/github/license/geocode-matt/tech-blog)
 
-<p align="center">
+<p align="left">
     <img src="https://img.shields.io/badge/javascript-yellow" />
     <img src="https://img.shields.io/badge/express-orange" />
     <img src="https://img.shields.io/badge/sequelize-blue"  />
