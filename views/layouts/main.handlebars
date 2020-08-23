@@ -14,15 +14,25 @@
 
 <body>
 	<header class="hero">
-    <nav class="navbar">
-      <a href="/" class="navbar-item">Home</a>
-      <a href="/dashboard" class="navbar-item">Dashboard</a>
-	  <a href="/login" id="login" class="button">Login</a>
-	  <a href="/logout" id="logout" class="button">Logout</a>
-      <a href="/dashboard/create/" class="navbar-item">Create Post</a>
+  <nav class="navbar">
+      <a href="/" class="navbar-item">
+      <button id="home-button">Home</button>
+      </a>
+      <a href="/dashboard" class="navbar-item">
+      <button id="dashboard-button">Dashboard</button>
+      </a>
+	  <a href="/login" id="login" class="navbar-item">
+    <button id="login-button">Login</button>
+    </a>
+  <a href="/logout" id="logout" class="navbar-item">
+  <button id="logout-button">Logout</button>
+  </a>
   </nav>
+  <br><br>
     <h1 class="app-title"><i class="fab fa-github"></i> Tech Blog</h1>
+  <br><br>
   </header>
+  <br>
 	{{{ body }}}
 
 {{#if loggedIn}}

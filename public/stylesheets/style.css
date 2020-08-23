@@ -189,6 +189,98 @@ p {
   border-radius: var(--border-radius);
 }
 
+/* my adds */
+.create-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+#create-post {
+  height: 40px;
+  width: 150px;
+  background-color: rgb(40, 88, 40);
+  color: white;
+  font-size: 1.5rem;
+}
+
+#home-button {
+  height: 30px;
+  width: 70px;
+  background-color: var(--light-dark);
+  color: white;
+  font-size: 1rem;
+  font-style: normal;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+#home-button:hover {
+  opacity: 1;
+}
+
+#dashboard-button {
+  height: 30px;
+  width: 100px;
+  background-color: var(--light-dark);
+  color: white;
+  font-size: 1rem;
+  font-style: normal;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+#dashboard-button:hover {
+  opacity: 1;
+}
+
+#login-button {
+  height: 30px;
+  width: 60px;
+  background-color: rgb(108, 106, 235);
+  color: white;
+  font-size: 1rem;
+  font-style: normal;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+#login-button:hover {
+  opacity: 1;
+}
+
+#logout-button {
+  height: 30px;
+  width: 70px;
+  background-color: rgb(231, 71, 71);
+  color: white;
+  font-size: 1rem;
+  font-style: normal;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+#logout-button:hover {
+  opacity: 1;
+}
+
+.post-card {
+  margin: 0 0 0 20px;
+}
+
+.post-link-text {
+  color: var(--primary);
+  text-decoration: none;
+}
+
 /* HEIGHT / WIDTH UTILS */
 .min-100-vh {
   min-height: 100vh;
