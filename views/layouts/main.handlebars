@@ -27,18 +27,24 @@
   <a href="/logout" id="logout" class="navbar-item">
   <button id="logout-button">Logout</button>
   </a>
-  </nav>
   <br><br>
-    <h1 class="app-title"><i class="fab fa-github"></i> Tech Blog</h1>
+  </nav>
+  <nav class="navbar">
+    <a href="/dashboard/create/">
+    <button id="create-post" class="button">Create post</button>
+    </a>
+  </nav>
+  <br>
+    <h1 class="app-title"><i class="fas fa-hashtag"></i> Tech Blog</h1>
   <br><br>
   </header>
   <br>
-	{{{ body }}}
+
+    {{{body}}}
 
 {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
 {{/if}}
-
 </body>
 
 </html>

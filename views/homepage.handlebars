@@ -1,11 +1,28 @@
-{{#each books}}
-<ul>
-{{#if read}}
-  <li>
-    <p>Title: {{title}}</p>
-    <p>Author: {{author}}</p>
-  </li>
-{{/if}}
-</ul>
-{{/each}}
+{{#if loggedIn}}
 
+    {{#each posts as |post|}}
+    <div class="card post-card">
+  <header class="card-header">
+    <div class="column">
+      <a class="post-link-text" href="/post/{{id}}">{{title}} </a></p>
+    </div>
+  </header>
+
+    <div class="card-content">
+        <div class="content">
+            {{post_content}}
+        </div>
+            <div class="card-content">
+                <b>{{user.username}}</b> | 
+                 | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+            </div>
+    </div>
+        
+          
+        </div>
+    {{/each}}
+
+{{else}}
+<h3 class="pb-4 has-text-centered is-italic">Please log in to see blog posts</h6>
+
+{{/if}}

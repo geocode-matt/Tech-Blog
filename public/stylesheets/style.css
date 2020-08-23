@@ -3,7 +3,8 @@
   --secondary: #9caea9;
   --tertiary: #788585;
   --light-dark: #6f6866;
-  --dark: #38302e;
+  /* --dark: #38302e; */
+  --dark: #000000;
   --border-radius: .3rem;
 }
 
@@ -205,7 +206,13 @@ nav a {
   width: 150px;
   background-color: rgb(40, 88, 40);
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+#create-post:hover {
+  opacity: 1;
 }
 
 #home-button {
@@ -216,7 +223,7 @@ nav a {
   font-size: 1rem;
   font-style: normal;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.9;
   transition: 0.2s;
 }
 
@@ -232,7 +239,7 @@ nav a {
   font-size: 1rem;
   font-style: normal;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.9;
   transition: 0.2s;
 }
 
@@ -248,7 +255,7 @@ nav a {
   font-size: 1rem;
   font-style: normal;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.9;
   transition: 0.2s;
 }
 
@@ -264,7 +271,7 @@ nav a {
   font-size: 1rem;
   font-style: normal;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.9;
   transition: 0.2s;
 }
 

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
+const checkAuth = require('../../utils/checkAuth');
 
 router.get('/', (req, res) => {
     Comment.findAll({})
@@ -10,7 +11,7 @@ router.get('/', (req, res) => {
       });
 });
 
-router.post('/', (req, res) => {
+router.post('/', checkAuth, (req, res) => {
     // check the session
     if (req.session) {
       Comment.create({

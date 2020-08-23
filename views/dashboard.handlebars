@@ -1,10 +1,5 @@
-<div class="create-post-container">
-    <a href="/dashboard/create/">
-    <button id="create-post" class="button">Create post</button>
-    </a>
 {{#if posts.length}}
-</div>
-<br>
+
     {{#each posts as |post|}}
     <div class="card post-card">
   <header class="card-header">
@@ -14,14 +9,13 @@
   </header>
 
     <div class="card-content">
-        <div class="content has-text-justified">
+        <div class="content">
             {{post_content}}
         </div>
             <div class="card-content">
                 <b>{{user.username}}</b> | 
                  | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             </div>
-        
     </div>
         
             <a href="/dashboard/edit/{{post.id}}"><button id="edit-post" class="button">Edit Post</button></a>

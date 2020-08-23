@@ -2,8 +2,9 @@ const express = require('express');
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
+const checkAuth = require('../utils/checkAuth');
 
-router.get('/', (req, res) => {
+router.get('/', checkAuth, (req, res) => {
     console.log(req.session);
     
     Post.findAll({
@@ -41,7 +42,7 @@ router.get('/', (req, res) => {
       });
   });
 
-router.get('/login', (req, res) => {
+router.get('/login', checkAuth, (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
       return;
@@ -97,7 +98,7 @@ router.get('/login', (req, res) => {
       });
   });
 
-  router.get('/edit/:id', (req, res) => {
+  router.get('/edit/:id', checkAuth, (req, res) => {
     Post.findOne({
       where: {
         id: req.params.id

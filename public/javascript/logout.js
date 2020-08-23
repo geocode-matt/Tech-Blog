@@ -7,10 +7,9 @@ async function logout() {
   
     if (response.ok) {
       document.location.replace('/');
-      window.alert("you have been logged out.");
     } else {
       alert(response.statusText);
     }
   }
   
-  document.querySelector('#logout').addEventListener('click', logout);
+  document.querySelector('#logout-button').addEventListener('click', logout);
