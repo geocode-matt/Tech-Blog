@@ -70,6 +70,7 @@ router.post('/', (req, res) => {
 
   // LOGIN
   router.post('/login', (req, res) => {
+      console.log("user logged in");
     User.findOne({
       where: {
         email: req.body.email
@@ -95,9 +96,11 @@ router.post('/', (req, res) => {
         res.json({ user: dbUserData, message: 'You are now logged in!' });
       });
     });
+    console.log(req.session.loggedIn);
   });
 
   router.post('/logout', (req, res) => {
+      console.log("user logged out");
     if (req.session.loggedIn) {
       req.session.destroy(() => {
         res.status(204).end();
@@ -108,7 +111,7 @@ router.post('/', (req, res) => {
     }
   });
 
-  // PUT /api/users/1
+// PUT /api/users/1
 router.put('/:id', (req, res) => {
     User.update(req.body, {
         individualHooks: true,
